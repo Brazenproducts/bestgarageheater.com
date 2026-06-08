@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,547 +8,426 @@
 <meta property="og:title" content="Best Garage Heaters of 2026 — Tested &amp; Ranked">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://bestgarageheater.com/">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        letterSpacing: { widest2: '0.25em' }
+      }
+    }
+  }
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --white: #ffffff;
-    --off-white: #f8f9fb;
-    --ink: #0d0d0d;
-    --ink-light: #444;
-    --ink-muted: #888;
-    --accent: #e8440a;
-    --accent-soft: rgba(232,68,10,0.08);
-    --blue: #0057ff;
-    --blue-soft: rgba(0,87,255,0.07);
-    --gold: #f5a623;
-    --shadow-ambient: 0 4px 40px rgba(0,0,0,0.07), 0 1px 8px rgba(0,0,0,0.04);
-    --shadow-hover: 0 16px 64px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
-    --radius: 20px;
-    --radius-sm: 10px;
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  .glass-header {
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    background: rgba(255,255,255,0.82);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background: var(--off-white);
-    color: var(--ink);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── GLASSMORPHISM STICKY HEADER ── */
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background: rgba(255,255,255,0.72);
-    border-bottom: 1px solid rgba(255,255,255,0.4);
-    box-shadow: 0 2px 24px rgba(0,0,0,0.06);
-    padding: 0 40px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: -0.3px;
-  }
-  .logo em { color: var(--accent); font-style: normal; }
-  .header-tag {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: linear-gradient(160deg, #0d0d0d 0%, #1a0a00 40%, #2d0d00 100%);
-    padding: 100px 40px 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -120px; left: 50%; transform: translateX(-50%);
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(232,68,10,0.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-inner { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
-  .hero-eyebrow {
-    display: inline-block;
-    background: rgba(232,68,10,0.15);
-    border: 1px solid rgba(232,68,10,0.3);
-    color: #ff7a50;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 24px;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
-  }
-  .hero h1 em { color: #ff7a50; font-style: normal; }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.65);
-    max-width: 560px;
-    margin: 0 auto 48px;
-    font-weight: 400;
-  }
-  .stats-row {
-    display: inline-flex;
-    gap: 0;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 100px;
-    overflow: hidden;
-    margin-bottom: 24px;
-  }
-  .stat {
-    padding: 14px 32px;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    text-align: center;
-  }
-  .stat:last-child { border-right: none; }
-  .stat-n { font-size: 1.5rem; font-weight: 900; color: var(--white); display: block; line-height: 1; }
-  .stat-l { font-size: 0.68rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px; display: block; }
-  .updated { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-
-  /* ── DISCLOSURE ── */
-  .disclosure {
-    background: #fffdf0;
-    border-bottom: 1px solid #f0e8c0;
-    padding: 12px 40px;
-    font-size: 0.8rem;
-    color: #7a6a30;
-    text-align: center;
-  }
-
-  /* ── PAGE WRAP ── */
-  .page-wrap { max-width: 1000px; margin: 0 auto; padding: 64px 24px 80px; }
-
-  /* ── EDITORIAL HOOK ── */
-  .editorial {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 40px 48px;
-    box-shadow: var(--shadow-ambient);
-    margin-bottom: 56px;
-    position: relative;
-    overflow: hidden;
-  }
-  .editorial::before {
-    content: '"';
-    position: absolute;
-    top: -20px; left: 24px;
-    font-family: 'Playfair Display', serif;
-    font-size: 10rem;
-    color: var(--accent-soft);
-    line-height: 1;
-    pointer-events: none;
-  }
-  .editorial p {
-    font-size: 1.12rem;
-    color: var(--ink-light);
-    line-height: 1.8;
-    position: relative;
-    z-index: 1;
-  }
-  .editorial strong { color: var(--ink); font-weight: 700; }
-
-  /* ── SECTION LABEL ── */
-  .section-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--ink);
-    margin-bottom: 40px;
-    letter-spacing: -0.5px;
-  }
-
-  /* ── REVIEW CARDS — ALTERNATING LAYOUT ── */
-  .review-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-ambient);
-    margin-bottom: 40px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 340px;
-  }
-  .review-card:hover {
-    box-shadow: var(--shadow-hover);
-    transform: translateY(-3px);
-  }
-  /* Odd cards: image left */
-  .review-card:nth-child(odd) { direction: ltr; }
-  /* Even cards: image right */
-  .review-card:nth-child(even) { direction: rtl; }
-  .review-card:nth-child(even) .card-image-panel,
-  .review-card:nth-child(even) .card-content-panel { direction: ltr; }
-
-  @media (max-width: 700px) {
-    .review-card { grid-template-columns: 1fr; direction: ltr !important; }
-    .review-card:nth-child(even) .card-image-panel { order: -1; }
-  }
-
-  /* IMAGE PANEL */
-  .card-image-panel {
-    position: relative;
-    background: linear-gradient(135deg, #f8f9fb 0%, #eef0f4 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 48px 40px;
-    overflow: hidden;
-  }
-  .card-image-panel::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(232,68,10,0.06) 0%, transparent 70%);
-  }
-  .card-image-panel img {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-    position: relative;
-    z-index: 1;
-    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.12));
-    transition: transform 0.3s ease;
-  }
-  .review-card:hover .card-image-panel img { transform: scale(1.04); }
-
-  /* RANK PILL on image */
-  .rank-pill {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: var(--ink);
-    color: var(--white);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 6px 14px;
-    border-radius: 100px;
-    z-index: 2;
-  }
-  .review-card:nth-child(even) .rank-pill { left: auto; right: 20px; }
-
-  /* CONTENT PANEL */
-  .card-content-panel {
-    padding: 48px 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 16px;
-  }
-  .card-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .price-tier {
-    background: var(--accent-soft);
-    color: var(--accent);
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    padding: 4px 12px;
-    border-radius: 100px;
-    border: 1px solid rgba(232,68,10,0.15);
-  }
-  .score-pill {
-    background: var(--blue-soft);
-    color: var(--blue);
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 100px;
-    border: 1px solid rgba(0,87,255,0.12);
-  }
-  .stars { color: var(--gold); font-size: 1rem; letter-spacing: 1px; }
-  .card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.25;
-    letter-spacing: -0.3px;
-  }
-  .card-desc {
-    font-size: 0.95rem;
-    color: var(--ink-light);
-    line-height: 1.75;
-  }
-  .our-take {
-    background: var(--blue-soft);
-    border-left: 3px solid var(--blue);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 12px 16px;
-    font-size: 0.87rem;
-    color: #003399;
-    line-height: 1.6;
-  }
-  .our-take strong { font-weight: 700; }
-  .cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
-  .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--accent);
-    color: var(--white);
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 100px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-    letter-spacing: 0.2px;
-  }
-  .cta-btn:hover { background: #c73508; transform: translateY(-1px); }
-  .price-hint { font-size: 0.78rem; color: var(--ink-muted); font-weight: 500; }
-
-  /* ── BLOG FEED ── */
-  .blog-section { margin-top: 72px; }
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  .blog-card {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 28px 32px;
-    text-decoration: none;
-    color: var(--ink);
-    box-shadow: var(--shadow-ambient);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: box-shadow 0.25s, transform 0.25s;
-  }
-  .blog-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-  .blog-icon { font-size: 1.8rem; }
-  .blog-title { font-size: 0.95rem; font-weight: 600; line-height: 1.45; flex: 1; color: var(--ink); }
-  .blog-arrow { font-size: 0.82rem; font-weight: 700; color: var(--accent); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--ink);
-    color: rgba(255,255,255,0.4);
-    text-align: center;
-    padding: 40px 24px;
-    font-size: 0.82rem;
-    margin-top: 80px;
-  }
-  footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 10px; }
-  footer a:hover { color: var(--white); }
 </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 antialiased">
 
-<header>
-  <a href="/" class="logo">Best<em>GarageHeater</em>.com</a>
-  <span class="header-tag">2026 Buyer's Guide</span>
+<!-- ── STICKY GLASS HEADER ── -->
+<header class="glass-header sticky top-0 z-50 shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="text-base font-black tracking-[0.2em] uppercase text-slate-900">
+      Best<span class="text-emerald-600">GarageHeater</span>
+    </a>
+    <span class="hidden sm:block text-xs font-semibold tracking-widest uppercase text-slate-400">2026 Buyer's Guide</span>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Independently Tested · June 2026</div>
-    <h1>The Only <em>5 Garage Heaters</em><br>Worth Buying This Winter</h1>
-    <p class="hero-sub">We cut through the marketing noise and ranked the heaters that actually deliver — tested by BTUs, efficiency, and real-world heat output.</p>
-    <div class="stats-row">
-      <div class="stat"><span class="stat-n">5</span><span class="stat-l">Tested</span></div>
-      <div class="stat"><span class="stat-n">12</span><span class="stat-l">Criteria</span></div>
-      <div class="stat"><span class="stat-n">40+</span><span class="stat-l">Hours</span></div>
+<!-- ── HERO ── -->
+<section class="relative bg-slate-900 overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(16,185,129,0.15)_0%,transparent_60%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_100%,rgba(16,185,129,0.08)_0%,transparent_50%)]"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-28 text-center">
+    <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase px-4 py-2 rounded-full mb-8">
+      Independently Tested · June 2026
     </div>
-    <div class="updated">Last Updated: June 2026</div>
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6">
+      The Only 5 Garage<br><span class="text-emerald-400">Heaters Worth Buying</span>
+    </h1>
+    <p class="text-lg text-slate-400 max-w-xl mx-auto mb-12 font-light leading-relaxed">
+      We spent 40+ hours testing BTU output, safety certifications, and real installation requirements so you don't have to.
+    </p>
+    <div class="inline-grid grid-cols-3 divide-x divide-white/10 bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+      <div class="px-8 py-5 text-center"><p class="text-3xl font-black text-white">5</p><p class="text-xs font-semibold tracking-widest uppercase text-slate-500 mt-1">Tested</p></div>
+      <div class="px-8 py-5 text-center"><p class="text-3xl font-black text-white">12</p><p class="text-xs font-semibold tracking-widest uppercase text-slate-500 mt-1">Criteria</p></div>
+      <div class="px-8 py-5 text-center"><p class="text-3xl font-black text-white">40+</p><p class="text-xs font-semibold tracking-widest uppercase text-slate-500 mt-1">Hours</p></div>
+    </div>
+    <p class="text-xs text-slate-600 mt-6 tracking-wide">Last Updated: June 2026</p>
   </div>
 </section>
 
-<div class="disclosure">
-  <strong>Affiliate Disclosure:</strong> We earn a small commission from Amazon on qualifying purchases — at no extra cost to you. We only recommend products we'd actually buy.
+<!-- ── DISCLOSURE ── -->
+<div class="bg-amber-50 border-b border-amber-100 px-6 py-3 text-center text-xs text-amber-700 font-medium">
+  <strong>Affiliate Disclosure:</strong> We earn a small commission from Amazon on qualifying purchases — at no extra cost to you.
 </div>
 
-<div class="page-wrap">
+<!-- ── MAIN CONTENT ── -->
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-8">
 
-  <div class="editorial">
-    <p>A cold garage doesn't just kill comfort — it kills productivity. The wrong heater either barely heats the space or burns through propane twice as fast as it should. <strong>We spent 40+ hours comparing BTU output, safety certifications, and real installation requirements</strong> so you can skip straight to the right answer. Use the price tier indicators to match your budget, then hit "See Current Price" for the live Amazon rate.</p>
+  <!-- Editorial Hook -->
+  <div class="bg-white rounded-3xl p-10 shadow-[0_2px_32px_rgba(0,0,0,0.06)] max-w-4xl mx-auto">
+    <p class="text-lg text-slate-600 leading-[1.85] font-light">
+      A cold garage doesn't just kill comfort — it kills productivity. The wrong heater either barely heats the space or burns through fuel twice as fast as it should.
+      <strong class="font-semibold text-slate-900">We ranked these 5 picks based on BTU output, value, and real-world reliability.</strong>
+      Use the price tier badges to find the right fit, then hit "See Current Price" for the live Amazon rate.
+    </p>
   </div>
 
-  <div class="section-label">Our Rankings</div>
-  <div class="section-title">Top 5 Garage Heaters of 2026</div>
+  <!-- Section label -->
+  <div class="pt-4">
+    <p class="text-xs font-bold tracking-[0.2em] uppercase text-emerald-600 mb-1">Our Rankings</p>
+    <h2 class="text-3xl font-black text-slate-900 tracking-tight">Top 5 Garage Heaters of 2026</h2>
+  </div>
 
-  <!-- CARD 1 — image LEFT -->
-  <div class="review-card">
-    <div class="card-image-panel">
-      <div class="rank-pill">#1 Best Overall</div>
-      <img src="https://m.media-amazon.com/images/I/71V+FWkXO4L._AC_UL320_.jpg" alt="Propane Cabinet Heater 18700 BTU" loading="lazy">
+  <!-- Product Cards -->
+  <div class="space-y-6">
+
+  <!-- CARD 1 -->
+  <article class="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_64px_rgba(0,0,0,0.11)] transition-all duration-300 hover:-translate-y-1">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] ">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-10 min-h-[320px] ">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)]"></div>
+        <span class="absolute top-5 left-5 bg-slate-900 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-full z-10">#1 — Best Overall</span>
+        <img src="https://m.media-amazon.com/images/I/71V+FWkXO4L._AC_UL320_.jpg" alt="Propane Cabinet Heater — 18,700 BTU" class="w-52 h-52 object-contain relative z-10 drop-shadow-xl group-hover:scale-105 transition-transform duration-300" loading="lazy">
+      </div>
+
+      <!-- CONTENT COLUMN -->
+      <div class="p-10 lg:p-12 flex flex-col justify-between gap-6 ">
+
+        <!-- TOP: meta + title -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-bold tracking-widest uppercase bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">$$ · Mid-Range</span>
+            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">9.8 / 10</span>
+            <span class="text-amber-400 text-sm tracking-wide">★★★★★</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight tracking-tight">Propane Cabinet Heater — 18,700 BTU</h2>
+        </div>
+
+        <!-- MIDDLE: pros / cons grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-2">Pros</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>No installation required</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>ODS safety shutoff</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>3 heat settings</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Portable — no mounting</li></ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Cons</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Needs propane tank</li><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Not for large garages</li></ul>
+          </div>
+        </div>
+
+        <!-- OUR TAKE -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
+          <strong class="font-semibold">Our Take:</strong> The clear #1 for most buyers. Plug-and-go heat with real BTU muscle.
+        </div>
+
+        <!-- BOTTOM: CTA -->
+        <div class="flex items-center gap-4 flex-wrap pt-1">
+          <a href="https://www.amazon.com/dp/B0GF1VLV2X?tag=brazenprodu01-20"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-emerald-200"
+             target="_blank" rel="noopener">
+            See Current Price
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">Price tier: $$ · Mid-Range</span>
+        </div>
+
+      </div>
     </div>
-    <div class="card-content-panel">
-      <div class="card-meta">
-        <span class="price-tier">$$ Mid-Range</span>
-        <span class="score-pill">9.8 / 10</span>
+  </article>
+
+  <!-- CARD 2 -->
+  <article class="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_64px_rgba(0,0,0,0.11)] transition-all duration-300 hover:-translate-y-1">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] lg:[direction:rtl]">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-10 min-h-[320px] lg:[direction:ltr]">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)]"></div>
+        <span class="absolute top-5 left-5 bg-slate-900 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-full z-10">#2 — Best Permanent</span>
+        <img src="https://m.media-amazon.com/images/I/71Gj+So7PCL._AC_UL320_.jpg" alt="Mr. Heater Big Maxx — 50,000 BTU Natural Gas" class="w-52 h-52 object-contain relative z-10 drop-shadow-xl group-hover:scale-105 transition-transform duration-300" loading="lazy">
       </div>
-      <div class="stars">★★★★★</div>
-      <div class="card-title">Propane Cabinet Heater — 18,700 BTU, 3 Temperature Settings</div>
-      <p class="card-desc">18,700 BTUs of serious heat in a freestanding cabinet. Three temperature settings, built-in ODS safety shutoff, and zero installation required. Connect a propane tank and you're heating in minutes.</p>
-      <div class="our-take"><strong>Our Take:</strong> The easiest way to heat a 1-car garage fast. Best overall pick for most buyers — powerful, portable, and no installation required.</div>
-      <div class="cta-row">
-        <a href="https://www.amazon.com/dp/B0GF1VLV2X?tag=brazenprodu01-20" class="cta-btn" target="_blank" rel="noopener">See Current Price →</a>
-        <span class="price-hint">Mid-Range · $$</span>
+
+      <!-- CONTENT COLUMN -->
+      <div class="p-10 lg:p-12 flex flex-col justify-between gap-6 lg:[direction:ltr]">
+
+        <!-- TOP: meta + title -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-bold tracking-widest uppercase bg-amber-50 text-amber-700 px-3 py-1 rounded-full">$$$ · Premium</span>
+            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">9.4 / 10</span>
+            <span class="text-amber-400 text-sm tracking-wide">★★★★☆</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight tracking-tight">Mr. Heater Big Maxx — 50,000 BTU Natural Gas</h2>
+        </div>
+
+        <!-- MIDDLE: pros / cons grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-2">Pros</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>50,000 BTU output</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Ceiling-mount saves floor space</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>CSA certified</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Low operating cost</li></ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Cons</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Requires gas line</li><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Professional install recommended</li></ul>
+          </div>
+        </div>
+
+        <!-- OUR TAKE -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
+          <strong class="font-semibold">Our Take:</strong> Best long-term investment for 2-3 car garages. Install once, forget about it.
+        </div>
+
+        <!-- BOTTOM: CTA -->
+        <div class="flex items-center gap-4 flex-wrap pt-1">
+          <a href="https://www.amazon.com/dp/B00LWW7V7K?tag=brazenprodu01-20"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-emerald-200"
+             target="_blank" rel="noopener">
+            See Current Price
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">Price tier: $$$ · Premium</span>
+        </div>
+
       </div>
+    </div>
+  </article>
+
+  <!-- CARD 3 -->
+  <article class="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_64px_rgba(0,0,0,0.11)] transition-all duration-300 hover:-translate-y-1">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] ">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-10 min-h-[320px] ">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)]"></div>
+        <span class="absolute top-5 left-5 bg-slate-900 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-full z-10">#3 — Best Portable</span>
+        <img src="https://m.media-amazon.com/images/I/71wB3AolnfL._AC_UL320_.jpg" alt="Mr. Heater 125,000 BTU Forced Air Propane" class="w-52 h-52 object-contain relative z-10 drop-shadow-xl group-hover:scale-105 transition-transform duration-300" loading="lazy">
+      </div>
+
+      <!-- CONTENT COLUMN -->
+      <div class="p-10 lg:p-12 flex flex-col justify-between gap-6 ">
+
+        <!-- TOP: meta + title -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-bold tracking-widest uppercase bg-amber-50 text-amber-700 px-3 py-1 rounded-full">$$$ · Premium</span>
+            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">9.1 / 10</span>
+            <span class="text-amber-400 text-sm tracking-wide">★★★★☆</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight tracking-tight">Mr. Heater 125,000 BTU Forced Air Propane</h2>
+        </div>
+
+        <!-- MIDDLE: pros / cons grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-2">Pros</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>125,000 BTU output</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Fully portable</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Heats large shops fast</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>No installation</li></ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Cons</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Loud fan noise</li><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>High propane consumption</li></ul>
+          </div>
+        </div>
+
+        <!-- OUR TAKE -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
+          <strong class="font-semibold">Our Take:</strong> When you need to heat something massive and heat it now.
+        </div>
+
+        <!-- BOTTOM: CTA -->
+        <div class="flex items-center gap-4 flex-wrap pt-1">
+          <a href="https://www.amazon.com/dp/B00KRFVG5G?tag=brazenprodu01-20"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-emerald-200"
+             target="_blank" rel="noopener">
+            See Current Price
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">Price tier: $$$ · Premium</span>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CARD 4 -->
+  <article class="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_64px_rgba(0,0,0,0.11)] transition-all duration-300 hover:-translate-y-1">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] lg:[direction:rtl]">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-10 min-h-[320px] lg:[direction:ltr]">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)]"></div>
+        <span class="absolute top-5 left-5 bg-slate-900 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-full z-10">#4 — Best Electric</span>
+        <img src="https://m.media-amazon.com/images/I/71OwMtXVDFL._AC_UL320_.jpg" alt="Comfort Zone Ceiling Mount — 7,500W 240V" class="w-52 h-52 object-contain relative z-10 drop-shadow-xl group-hover:scale-105 transition-transform duration-300" loading="lazy">
+      </div>
+
+      <!-- CONTENT COLUMN -->
+      <div class="p-10 lg:p-12 flex flex-col justify-between gap-6 lg:[direction:ltr]">
+
+        <!-- TOP: meta + title -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-bold tracking-widest uppercase bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">$$ · Mid-Range</span>
+            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">8.7 / 10</span>
+            <span class="text-amber-400 text-sm tracking-wide">★★★★☆</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight tracking-tight">Comfort Zone Ceiling Mount — 7,500W 240V</h2>
+        </div>
+
+        <!-- MIDDLE: pros / cons grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-2">Pros</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Zero fumes</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Ceiling-mount design</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Adjustable bracket</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>No fuel cost</li></ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Cons</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Requires 240V wiring</li><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Lower BTU than gas</li></ul>
+          </div>
+        </div>
+
+        <!-- OUR TAKE -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
+          <strong class="font-semibold">Our Take:</strong> Best for garages with 240V service. Cleanest, quietest option on the list.
+        </div>
+
+        <!-- BOTTOM: CTA -->
+        <div class="flex items-center gap-4 flex-wrap pt-1">
+          <a href="https://www.amazon.com/dp/B09H3KWR1B?tag=brazenprodu01-20"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-emerald-200"
+             target="_blank" rel="noopener">
+            See Current Price
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">Price tier: $$ · Mid-Range</span>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- CARD 5 -->
+  <article class="group bg-white rounded-3xl overflow-hidden shadow-[0_2px_32px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_64px_rgba(0,0,0,0.11)] transition-all duration-300 hover:-translate-y-1">
+    <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] ">
+
+      <!-- IMAGE COLUMN -->
+      <div class="relative bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col items-center justify-center p-10 min-h-[320px] ">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.06)_0%,transparent_70%)]"></div>
+        <span class="absolute top-5 left-5 bg-slate-900 text-white text-xs font-bold tracking-wider px-3 py-1.5 rounded-full z-10">#5 — Best Budget</span>
+        <img src="https://m.media-amazon.com/images/I/71kiNNYTQxL._AC_UL320_.jpg" alt="Comfort Zone Ceiling Mount — 5,000W Electric" class="w-52 h-52 object-contain relative z-10 drop-shadow-xl group-hover:scale-105 transition-transform duration-300" loading="lazy">
+      </div>
+
+      <!-- CONTENT COLUMN -->
+      <div class="p-10 lg:p-12 flex flex-col justify-between gap-6 ">
+
+        <!-- TOP: meta + title -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-bold tracking-widest uppercase bg-slate-100 text-slate-600 px-3 py-1 rounded-full">$ · Budget</span>
+            <span class="text-xs font-bold bg-blue-50 text-blue-600 px-3 py-1 rounded-full">8.3 / 10</span>
+            <span class="text-amber-400 text-sm tracking-wide">★★★★☆</span>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 leading-tight tracking-tight">Comfort Zone Ceiling Mount — 5,000W Electric</h2>
+        </div>
+
+        <!-- MIDDLE: pros / cons grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-2">Pros</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Affordable entry price</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Ceiling-mount</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>No fumes</li><li class="flex items-start gap-2 text-sm text-slate-600"><span class="text-emerald-500 font-bold mt-0.5">✓</span>Easy to install</li></ul>
+          </div>
+          <div>
+            <p class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">Cons</p>
+            <ul class="space-y-1.5"><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>Less powerful than 7500W</li><li class="flex items-start gap-2 text-sm text-slate-500"><span class="text-slate-300 font-bold mt-0.5">✗</span>240V still required</li></ul>
+          </div>
+        </div>
+
+        <!-- OUR TAKE -->
+        <div class="bg-blue-50 border-l-4 border-blue-400 rounded-r-xl px-4 py-3 text-sm text-blue-800 leading-relaxed">
+          <strong class="font-semibold">Our Take:</strong> Solid budget pick for a single-car garage. Gets the job done without the premium price.
+        </div>
+
+        <!-- BOTTOM: CTA -->
+        <div class="flex items-center gap-4 flex-wrap pt-1">
+          <a href="https://www.amazon.com/dp/B08HVWQ3ZQ?tag=brazenprodu01-20"
+             class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-colors duration-150 shadow-lg shadow-emerald-200"
+             target="_blank" rel="noopener">
+            See Current Price
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <span class="text-xs text-slate-400 font-medium">Price tier: $ · Budget</span>
+        </div>
+
+      </div>
+    </div>
+  </article>
+  </div>
+
+  <!-- Blog Feed -->
+  <div class="pt-12">
+    <p class="text-xs font-bold tracking-[0.2em] uppercase text-emerald-600 mb-1">Keep Reading</p>
+    <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-8">From Our Blog</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+  <a href="/best-garage-heaters.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">🔥</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">Best Garage Heaters 2026 — Ranked & Reviewed</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
+
+  <a href="/buying-guide-garageheater-2026.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">📋</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">Garage Heater Buying Guide 2026</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
+
+  <a href="/comparison-garageheater-2026.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">⚖️</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">Best Garage Heaters Compared — 2026</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
+
+  <a href="/faq-garageheater-2026.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">❓</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">Garage Heater FAQ — Every Question Answered</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
+
+  <a href="/under-100-garageheater-2026.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">💰</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">Best Garage Heaters Under $100 in 2026</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
+
+  <a href="/how-to-pick-garageheater-2026.html" class="group bg-white rounded-2xl p-7 shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.10)] transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3">
+    <span class="text-2xl">🎯</span>
+    <span class="text-sm font-semibold text-slate-800 leading-snug flex-1">How to Pick the Right Garage Heater</span>
+    <span class="text-xs font-bold text-emerald-600 group-hover:gap-2 transition-all">Read More →</span>
+  </a>
     </div>
   </div>
 
-  <!-- CARD 2 — image RIGHT -->
-  <div class="review-card">
-    <div class="card-image-panel">
-      <div class="rank-pill">#2 Best Permanent</div>
-      <img src="https://m.media-amazon.com/images/I/71Gj+So7PCL._AC_UL320_.jpg" alt="Mr. Heater Big Maxx 50000 BTU" loading="lazy">
-    </div>
-    <div class="card-content-panel">
-      <div class="card-meta">
-        <span class="price-tier">$$$ Premium</span>
-        <span class="score-pill">9.4 / 10</span>
-      </div>
-      <div class="stars">★★★★★</div>
-      <div class="card-title">Mr. Heater Big Maxx MHU50NG — 50,000 BTU Natural Gas</div>
-      <p class="card-desc">The go-to for 2-3 car garages. 50,000 BTUs of natural gas heat, ceiling-mount keeps floor space completely clear, and it's CSA certified for continuous commercial use. Install once, forget about it.</p>
-      <div class="our-take"><strong>Our Take:</strong> Best long-term investment for a dedicated workshop. Requires gas line hookup but delivers unmatched efficiency per dollar over time.</div>
-      <div class="cta-row">
-        <a href="https://www.amazon.com/dp/B00LWW7V7K?tag=brazenprodu01-20" class="cta-btn" target="_blank" rel="noopener">See Current Price →</a>
-        <span class="price-hint">Premium · $$$</span>
-      </div>
-    </div>
-  </div>
+</main>
 
-  <!-- CARD 3 — image LEFT -->
-  <div class="review-card">
-    <div class="card-image-panel">
-      <div class="rank-pill">#3 Best Portable</div>
-      <img src="https://m.media-amazon.com/images/I/71wB3AolnfL._AC_UL320_.jpg" alt="Mr. Heater 125000 BTU Forced Air" loading="lazy">
-    </div>
-    <div class="card-content-panel">
-      <div class="card-meta">
-        <span class="price-tier">$$$ Premium</span>
-        <span class="score-pill">9.1 / 10</span>
-      </div>
-      <div class="stars">★★★★☆</div>
-      <div class="card-title">Mr. Heater 125,000 BTU Forced Air Propane Heater</div>
-      <p class="card-desc">125,000 BTUs of forced air heat — overkill for most home garages, perfect for large detached shops. Runs on standard propane, fully portable, heats massive spaces in minutes. The fan is loud, but that's the tradeoff.</p>
-      <div class="our-take"><strong>Our Take:</strong> When you need to heat something big and heat it now. Not subtle — but neither is 125k BTUs of raw output.</div>
-      <div class="cta-row">
-        <a href="https://www.amazon.com/dp/B00KRFVG5G?tag=brazenprodu01-20" class="cta-btn" target="_blank" rel="noopener">See Current Price →</a>
-        <span class="price-hint">Premium · $$$</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 4 — image RIGHT -->
-  <div class="review-card">
-    <div class="card-image-panel">
-      <div class="rank-pill">#4 Best Electric</div>
-      <img src="https://m.media-amazon.com/images/I/71OwMtXVDFL._AC_UL320_.jpg" alt="Comfort Zone Ceiling Mount 7500W" loading="lazy">
-    </div>
-    <div class="card-content-panel">
-      <div class="card-meta">
-        <span class="price-tier">$$ Mid-Range</span>
-        <span class="score-pill">8.7 / 10</span>
-      </div>
-      <div class="stars">★★★★☆</div>
-      <div class="card-title">Comfort Zone Ceiling Mount — 7,500W 240V Electric</div>
-      <p class="card-desc">240V electric ceiling mount that stays completely out of your workspace. 7,500 watts of clean electric heat, zero fumes, no propane tanks. Adjustable bracket, aims exactly where you work. Requires 240V but zero ongoing fuel cost.</p>
-      <div class="our-take"><strong>Our Take:</strong> Best for garages with 240V service already in place. Cleaner than gas, quieter than forced air, and completely set-and-forget.</div>
-      <div class="cta-row">
-        <a href="https://www.amazon.com/dp/B09H3KWR1B?tag=brazenprodu01-20" class="cta-btn" target="_blank" rel="noopener">See Current Price →</a>
-        <span class="price-hint">Mid-Range · $$</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 5 — image LEFT -->
-  <div class="review-card">
-    <div class="card-image-panel">
-      <div class="rank-pill">#5 Best Budget</div>
-      <img src="https://m.media-amazon.com/images/I/71kiNNYTQxL._AC_UL320_.jpg" alt="Comfort Zone 5000W Ceiling Heater" loading="lazy">
-    </div>
-    <div class="card-content-panel">
-      <div class="card-meta">
-        <span class="price-tier">$ Budget</span>
-        <span class="score-pill">8.3 / 10</span>
-      </div>
-      <div class="stars">★★★★☆</div>
-      <div class="card-title">Comfort Zone Ceiling Mount — 5,000W Electric, Budget Pick</div>
-      <p class="card-desc">The accessible sibling to the 7500W model. Runs 240V at 5,000W, ceiling-mount keeps it out of the way, and reliably heats a single-car garage without breaking the bank. Best entry point into ceiling-mount electric heat.</p>
-      <div class="our-take"><strong>Our Take:</strong> Solid value for a 1-car garage. Less raw power than the 7500W but meaningfully cheaper — and still genuinely effective.</div>
-      <div class="cta-row">
-        <a href="https://www.amazon.com/dp/B08HVWQ3ZQ?tag=brazenprodu01-20" class="cta-btn" target="_blank" rel="noopener">See Current Price →</a>
-        <span class="price-hint">Budget · $</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- BLOG FEED -->
-  <div class="blog-section">
-    <div class="section-label">Keep Reading</div>
-    <div class="section-title" style="margin-bottom:24px;">From Our Blog</div>
-    <div class="blog-grid">
-      <a href="/best-garage-heaters.html" class="blog-card"><span class="blog-icon">🔥</span><span class="blog-title">Best Garage Heaters 2026 — Ranked &amp; Reviewed</span><span class="blog-arrow">Read More →</span></a>
-      <a href="/buying-guide-garageheater-2026.html" class="blog-card"><span class="blog-icon">📋</span><span class="blog-title">Garage Heater Buying Guide 2026 — What to Know Before You Buy</span><span class="blog-arrow">Read More →</span></a>
-      <a href="/comparison-garageheater-2026.html" class="blog-card"><span class="blog-icon">⚖️</span><span class="blog-title">Best Garage Heaters Compared — 2026 Rankings</span><span class="blog-arrow">Read More →</span></a>
-      <a href="/faq-garageheater-2026.html" class="blog-card"><span class="blog-icon">❓</span><span class="blog-title">Garage Heater FAQ — Every Question Answered</span><span class="blog-arrow">Read More →</span></a>
-      <a href="/under-100-garageheater-2026.html" class="blog-card"><span class="blog-icon">💰</span><span class="blog-title">Best Garage Heaters Under $100 in 2026</span><span class="blog-arrow">Read More →</span></a>
-      <a href="/how-to-pick-garageheater-2026.html" class="blog-card"><span class="blog-icon">🎯</span><span class="blog-title">How to Pick the Right Garage Heater — 2026 Edition</span><span class="blog-arrow">Read More →</span></a>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <p>&copy; 2026 BestGarageHeater.com &nbsp;·&nbsp;
-    <a href="/about.html">About</a>
-    <a href="/privacy.html">Privacy</a>
-    <a href="/contact.html">Contact</a>
+<!-- ── FOOTER ── -->
+<footer class="bg-slate-900 text-slate-500 text-center py-12 px-6 mt-16">
+  <p class="text-sm">
+    &copy; 2026 BestGarageHeater.com &nbsp;·&nbsp;
+    <a href="/about.html" class="hover:text-white transition-colors">About</a> &nbsp;·&nbsp;
+    <a href="/privacy.html" class="hover:text-white transition-colors">Privacy</a> &nbsp;·&nbsp;
+    <a href="/contact.html" class="hover:text-white transition-colors">Contact</a>
   </p>
-  <p style="margin-top:10px;">As an Amazon Associate we earn from qualifying purchases.</p>
+  <p class="text-xs text-slate-600 mt-3">As an Amazon Associate we earn from qualifying purchases.</p>
 </footer>
 
 </body>
